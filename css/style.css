@@ -29,6 +29,7 @@ div h4 a{
 }
 section div p{
 	clear: both;
+	font-size: 0.8em;
 }
 section img{ 
 	width: 50px;
@@ -37,6 +38,7 @@ section img{
 	padding: 10px;
 	background: #04646F;
 	border-radius: 16px;
+	margin-bottom: 10px;
 }
 footer{
 	clear: both;
