@@ -57,7 +57,7 @@ app.controller('logController', function ($scope) {
         },
         {
             "title": "Eloquent Javascript",
-            "link": "",
+            "link": "http://eloquentjavascript.net/",
             "category": "Livro",
             "year": 2016,
             "description": "Li este livro até a parte de NodeJS, que pretendo ler daqui alguns meses, quando eu começar meus estudos de NodeJS. Fiz várias anotações e exercícios para me ajudar a fixar a matéria. Como eu me formei em Design Gráfico, não vi teoria de programação, então ler e estudar livros como este me ajuda a saber os nomes certos das coisas."
