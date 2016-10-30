@@ -52,7 +52,7 @@ app.controller('logController', function ($scope) {
             "title": "Estágio Home Office",
             "link": "http://www.dmxweb.com.br/",
             "category": "Experiência de Trabalho",
-            "year": 2011,
+            "year": 2013,
             "description": "Primeiro estágio da área. Falava com a equipe pelo skype e o trabalho consistia principalmente na edição e atualização de websites."
         },
         {
