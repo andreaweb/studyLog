@@ -1,6 +1,7 @@
 body{
 	background: #9CF9F0;
 	font-family: sans-serif;
+	color: #292e2e
 }
 main{
 	width: 60vw;
@@ -21,6 +22,10 @@ main section div{
 section div h4{
 	float: left;
 	margin-left: 5px;
+	color: #292e2e
+}
+div h4 a{
+	color:#292e2e;
 }
 section div p{
 	clear: both;
