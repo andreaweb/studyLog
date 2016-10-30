@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<title>Diário de Estudos</title>
 </head>
-<body>
+<body ng-app="studyLog" ng-controller="logController">
 <!-- para ficar mais interessante tanto visualmente quanto em termos de conteúdo, usar 'achievements' - ícones para simbolizar cada item da lista: exemplo, uma mala para exp. de trabalho, um diploma por curso completado, um livro para cada livro lido/estudado, um troféu para outras coisas (como parar de usar IE). e depois aplicar Angular para filtrar - por livro, por exp, etc -->
 	<h1>Diário de Estudos</h1>
 	<h2></h2>
@@ -34,67 +34,50 @@
 
 		Quase sete anos se passaram e eu não me lembro de tudo que estudei, porém, à medida que eu lembrar, irei completar os registros. É por isso que você pode voltar daqui alguns dias e descobrir um novo curso em 2014.<br><br>
 
-		Daqui em diante (10/2016) ele será atualizado com frequência e os registros ficaram bem mais cheinhos. Em breve vou criar um filtro para ajudar na navegação :)
+		Daqui em diante (10/2016) ele será atualizado com frequência e os registros ficarão bem mais cheinhos. Em breve vou criar um filtro para ajudar na navegação :)
 	</p>	
 
-	<section>
-		<h3>2016</h3>
-	</section>
-	
-	<section>
-		<h3>2015</h3>
+	<form>
+        <span class="glyphicon glyphicon-search" ></span >
 
-		<ul>
-			<li>
-				<img src="images/images/briefcase.png.png"> Experiência de trabalho e meu primeiro contato com um time especializado em T.I. (empresas anteriores eram focadas em design)
-			</li>
-			<li>
-				<img src="images/diploma.png"> <a href="http://school.codecraftpro.com/p/angularjs-1x-fundamentals/?product_id=29514"> Curso Online de AngularJS</a>
-			</li>
-		</ul>
-	</section>
-	
-	<section>
-		<h3>2014</h3>
+        
+                <input type="text"
+                       class="form-control"
+                       ng-model="search"
+                       placeholder="Escolha o tipo de busca  - Padrão: Nome"
+                        />
+                
+               <select class="form-smaller" ng-model="filter">
+                   <option value="title">por nome</option>
+                   <option value="category">por categoria</option>
+                   <option value="year">por ano</option>
+               </select>                  
 
-		<ul>
-			<li>
-				<img src="images/briefcase.png"> Estágio em que fiz um pouco de tudo: front, 3d, vídeo, design gráfico, redes sociais...
-			</li>
-		</ul>
-	</section>
-	
-	<section>
-		<h3>2013</h3>
+        <span class="glyphicon glyphicon-sort-by-attributes" ></span >
 
-		<ul>
-			<li><img src="images/briefcase.png"> Primeiro estágio e experiência home-office </li>
-		</ul>
-	</section>
-	
-	<section>
-		<h3>2012</h3>
+        
+            <select class="form-control"
+                            ng-model="order">
+                
+                
+                <option value="-year" >Ordenar do mais recente para o mais antigo</option >
+                <option value="year" >Ordenar do mais antigo para o mais recente</option >
+                
+            </select >
+           
+          
+    </form >
 
-		<ul>
-			<li><img src=""> Diversas linguagens de programação</li>
-			<li><img src="">  Início da faculdade em Design Gráfico (Digital)</li>
-		</ul>
+	<section ng-show="filtereditems.length == 0" ng-cloak>					
+		<div class="alert alert-danger">
+			<p>Nenhum resultado para '{{ search }}'.</p>
+		</div>				
 	</section>
 
-	<section>
-		<H3>2011</H3>
-
-		<ul>
-			<li><img src="images/diploma.png"> Curso Web Designer - Senac</li>
-		</ul>
-	</section>
-	
-	<section>
-		<H3>2010 - Um computador para chamar de meu</H3>
-
-		<ul>
-			<li><img src="images/achievement.png"> Parei de usar o Internet Explorer \o/</li>
-		</ul>
+	<section ng-repeat="item in filtereditems = (items | filter:search | filter:getFilter() | orderBy:order)">
+		<img ng-src="{{item.category}}">
+		<h4><a href="{{item.link}}" target="_blank">{{item.title}}</a></h4>
+		<p>{{item.description}}</p> 
 	</section>
 
 	<footer>
@@ -104,5 +87,10 @@
 
 		<div>Icons made by <a href="http://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 	</footer>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js'></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>
