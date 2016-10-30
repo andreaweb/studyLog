@@ -2,6 +2,15 @@ body{
 	background: #9CF9F0;
 	font-family: sans-serif;
 }
+main{
+	width: 60vw;
+	float: left;
+}
+aside{
+	width: 30vw;
+	float: left;
+	margin-left: 5vw;
+}
 section ul li{
 	list-style-type: none;
 }
@@ -11,4 +20,7 @@ section li{
 section img{ 
 	width: 50px;
 	height: 50px;
+}
+footer{
+	clear: both;
 }

@@ -10,75 +10,72 @@
 	<h1>Diário de Estudos</h1>
 	<h2></h2>
 
-	
+	<main>
+		<form>
+	        <span class="glyphicon glyphicon-search" ></span >
 
-	<p>O que aparece</p>
-	<ul>
-		<li>Os itens abaixo, quando relacionados à programação ou design:</li>
-		<li>Cursos, presenciais ou online.</li>
-		<li>Livros que li ou estudei (por estudar entenda: li + fiz anotações).</li>
-		<li>Experiências de trabalho ou estágio.</li>
-		<li>Descobertas relevantes.</li>
-	</ul>
+	        
+            <input type="text"
+                   class="form-control"
+                   ng-model="search"
+                   placeholder="Escolha o tipo de busca  - Padrão: Nome"
+                    />
+            
+           <select class="form-smaller" ng-model="filter">
+               <option value="title">por nome</option>
+               <option value="category">por categoria</option>
+               <option value="year">por ano</option>
+           </select>                  
 
-	<p>O que não aparece</p>
-	<ul>
-		<li>Cursos, livros ou experiências de trabalho não relacionados à programação ou design.</li>
-		<li>Cursos de idiomas. Em 2011 eu já falava inglês avançado e outros idiomas são bem menos relevantes para a área (sem mencionar que eu não aprendi realmente outros idiomas, rs).</li>
-		<li>Experiências como freelance.</li>
-	</ul>
+	        <span class="glyphicon glyphicon-sort-by-attributes" ></span >
 
-	<p>Atualizações</p>
-	<p>
-		Este diário foi concebido em Outubro de 2016, mas seu conteúdo inicia-se no que chamo de "marco zero": quando adquiri um computador com acesso a internet, em 2010.<br><br>
-
-		Quase sete anos se passaram e eu não me lembro de tudo que estudei, porém, à medida que eu lembrar, irei completar os registros. É por isso que você pode voltar daqui alguns dias e descobrir um novo curso em 2014.<br><br>
-
-		Daqui em diante (10/2016) ele será atualizado com frequência e os registros ficarão bem mais cheinhos. Em breve vou criar um filtro para ajudar na navegação :)
-	</p>	
-
-	<form>
-        <span class="glyphicon glyphicon-search" ></span >
-
-        
-                <input type="text"
-                       class="form-control"
-                       ng-model="search"
-                       placeholder="Escolha o tipo de busca  - Padrão: Nome"
-                        />
-                
-               <select class="form-smaller" ng-model="filter">
-                   <option value="title">por nome</option>
-                   <option value="category">por categoria</option>
-                   <option value="year">por ano</option>
-               </select>                  
-
-        <span class="glyphicon glyphicon-sort-by-attributes" ></span >
-
-        
-            <select class="form-control"
-                            ng-model="order">
-                
-                
+	        
+            <select class="form-control" ng-model="order"> 
                 <option value="-year" >Ordenar do mais recente para o mais antigo</option >
                 <option value="year" >Ordenar do mais antigo para o mais recente</option >
-                
-            </select >
-           
-          
-    </form >
+            </select >              
+	    </form >
 
-	<section ng-show="filtereditems.length == 0" ng-cloak>					
-		<div class="alert alert-danger">
-			<p>Nenhum resultado para '{{ search }}'.</p>
-		</div>				
-	</section>
+		<section ng-show="filtereditems.length == 0" ng-cloak>					
+			<div class="alert alert-danger">
+				<p>Nenhum resultado para '{{ search }}'.</p>
+			</div>				
+		</section>
 
-	<section ng-repeat="item in filtereditems = (items | filter:search | filter:getFilter() | orderBy:order)">
-		<img ng-src="{{item.category}}">
-		<h4><a href="{{item.link}}" target="_blank">{{item.title}}</a></h4>
-		<p>{{item.description}}</p> 
-	</section>
+		<section ng-repeat="item in filtereditems = (items | filter:search | filter:getFilter() | orderBy:order)">
+			<img ng-src="{{item.category == 'Curso' && 'images/diploma.png' || item.category == 'Realização' && 'images/achievement.png' || item.category == 'Livro' && 'images/book.png' || item.category == 'Experiência de Trabalho' && 'images/briefcase.png'}}">
+			<h4><a href="{{item.link}}" target="_blank">{{item.title}}</a></h4>
+			<p>{{item.description}}</p> 
+		</section>
+	</main>
+
+	<aside>
+
+		<p>O que aparece</p>
+		<ul>
+			<li>Os itens abaixo, quando relacionados à programação ou design:</li>
+			<li>Cursos, presenciais ou online.</li>
+			<li>Livros que li ou estudei (por estudar entenda: li + fiz anotações).</li>
+			<li>Experiências de trabalho ou estágio.</li>
+			<li>Descobertas relevantes.</li>
+		</ul>
+
+		<p>O que não aparece</p>
+		<ul>
+			<li>Cursos, livros ou experiências de trabalho não relacionados à programação ou design.</li>
+			<li>Cursos de idiomas. Em 2011 eu já falava inglês avançado e outros idiomas são bem menos relevantes para a área (sem mencionar que eu não aprendi realmente outros idiomas, rs).</li>
+			<li>Experiências como freelance.</li>
+		</ul>
+
+		<p>Atualizações</p>
+		<p>
+			Este diário foi concebido em Outubro de 2016, mas seu conteúdo inicia-se no que chamo de "marco zero": quando adquiri um computador com acesso a internet, em 2010.<br><br>
+
+			Quase sete anos se passaram e eu não me lembro de tudo que estudei, porém, à medida que eu lembrar, irei completar os registros. É por isso que você pode voltar daqui alguns dias e descobrir um novo curso em 2014.<br><br>
+
+			Daqui em diante (10/2016) ele será atualizado com frequência e os registros ficarão bem mais cheinhos. Em breve vou criar um filtro para ajudar na navegação :)
+		</p>	
+	</aside>
 
 	<footer>
 		<p>Sou uma pessoa ansiosa que adora planejar o futuro. Esses planos raramente são rígidos, eu os moldo conforme a necessidade. Mas isso não me impede de ter uma ideia geral do que fazer a seguir.</p>
