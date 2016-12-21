@@ -6,38 +6,26 @@
 	<title>Diário de Estudos</title>
 </head>
 <body ng-app="studyLog" ng-controller="logController">
-<!-- para ficar mais interessante tanto visualmente quanto em termos de conteúdo, usar 'achievements' - ícones para simbolizar cada item da lista: exemplo, uma mala para exp. de trabalho, um diploma por curso completado, um livro para cada livro lido/estudado, um troféu para outras coisas (como parar de usar IE). e depois aplicar Angular para filtrar - por livro, por exp, etc -->
 	<h1>Diário de Estudos</h1>
 	<h2></h2>
 
+	<form>
+				<!-- inserir um radio button ou checkbox com a opção "Mostrar descrição", deixando sem seleção by default e portanto escondendo a descrição-->
+				<span class="glyphicon glyphicon-search" ></span >
+
+
+					<input type="text"
+								 class="search"
+								 ng-model="search"
+								 placeholder="Busca - no momento funciona apenas para títulos"
+									/>
+
+				<span class="glyphicon glyphicon-sort-by-attributes" ></span >
+	</form >
+
 	<main>
-		<form>
-	        <span class="glyphicon glyphicon-search" ></span >
-
-	        
-            <input type="text"
-                   class="form-control"
-                   ng-model="search"
-                   placeholder="Escolha o tipo de busca  - Padrão: Nome"
-                    />
-            
-           <select class="form-smaller" ng-model="filter">
-               <option value="title">por nome</option>
-               <option value="category">por categoria</option>
-               <option value="year">por ano</option>
-           </select>                  
-
-	        <span class="glyphicon glyphicon-sort-by-attributes" ></span >
-
-	        
-            <select class="form-control" ng-model="order"> 
-                <option value="-year" >Ordenar do mais recente para o mais antigo</option >
-                <option value="year" >Ordenar do mais antigo para o mais recente</option >
-            </select >              
-	    </form >
-
-		<section ng-show="filtereditems.length == 0" ng-cloak>					
-			<p>Nenhum resultado para '{{ search }}'.</p>			
+		<section ng-show="filtereditems.length == 0" ng-cloak>
+			<p>Nenhum resultado para '{{ search }}'.</p>
 		</section>
 
 		<section ng-repeat="item in filtereditems = (items | filter:search | filter:getFilter() | orderBy:order)">
@@ -49,7 +37,7 @@
 				<h4 ng-if="!item.link">
 					{{item.title}}
 				</h4>
-				<p>{{item.description}}</p> 
+				<p>{{item.description}}</p>
 			</div>
 		</section>
 	</main>
@@ -68,8 +56,8 @@
 		<p>O que não aparece</p>
 		<ul>
 			<li>Cursos, livros ou experiências de trabalho não relacionados à programação ou design.</li>
-			<li>Cursos de idiomas. Em 2011 eu já falava inglês avançado e outros idiomas são bem menos relevantes para a área (sem mencionar que eu não aprendi realmente outros idiomas, rs).</li>
-			<li>Experiências como freelance.</li>
+			<li>Cursos de idiomas.</li>
+			<li>Experiências como freelancer.</li>
 		</ul>
 
 		<p>Atualizações</p>
@@ -79,12 +67,12 @@
 			Quase sete anos se passaram e eu não me lembro de tudo que estudei, porém, à medida que eu lembrar, irei completar os registros. É por isso que você pode voltar daqui alguns dias e descobrir um novo curso em 2014.<br><br>
 
 			Daqui em diante (10/2016) ele será atualizado com frequência e os registros ficarão bem mais cheinhos. Em breve vou criar um filtro para ajudar na navegação :)
-		</p>	
+		</p>
 	</aside>
 
 	<footer>
 		<p>Sou uma pessoa ansiosa que adora planejar o futuro. Esses planos raramente são rígidos, eu os moldo conforme a necessidade. Mas isso não me impede de ter uma ideia geral do que fazer a seguir.</p>
-		<p>Além disso, notei uma dúvida comum na mente dos aprendizes (e creio, não somente programação, mas em muitas áreas): Quanto tempo eu vou levar para aprender X?</p>
+		<p>Além disso, notei uma dúvida comum na mente dos aprendizes: Quanto tempo eu vou levar para aprender X?</p>
 		<p>A resposta para esta pergunta, não importa o que X seja, é bastante variável. Talvez manter um diário do que aprendi (e quando) possa ajudar outras pessoas a ter uma noção da resposta, além de ajudar a mim mesma a verificar meu progresso e me encorajar a aprender cada vez mais.</p>
 
 		<div>Icons made by <a href="http://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
