@@ -151,7 +151,7 @@ app.controller('logController', function ($scope) {
             "link": "",
             "category": "Livro",
             "year": 2016,
-            "description": "Estou na página 101 deste livro e confesso que até o momento achei um pouco chato, mas pretendo insistir e terminá-lo."
+            "description": "Estou na página 115 deste livro e confesso que até o momento achei um pouco chato, mas pretendo insistir e terminá-lo."
         }
 
     ]
