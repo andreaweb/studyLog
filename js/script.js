@@ -57,7 +57,7 @@ app.controller('logController', function ($scope) {
         },
 				{
             "title": "Graduação em Design Gráfico/Digital",
-            "link": "",
+            "link": "http://graduacao.infnet.edu.br/graduacao-design-grafico/?gclid=Cj0KEQiAlsrFBRCAxcCB54XElLEBEiQA_ei0DKt1oSioZpP4XAOj7oEjxhSQ9KbWOzZPd5ziV8O93SwaAuyT8P8HAQ",
             "category": "Curso",
             "year": 2012,
             "description": "Foram vários meses estudando para o ENEM para conseguir o ProUni! O curso foi bem bacana, porém me ajudou na falta de foco. A cada trimestre aprendíamos diferentes conceitos e softwares: ilustração digital e manual, edição de vídeo, animação, design de livro, webdesign, etc... Eu ficava encantada com tudo e estudava de tudo um pouquinho. Hoje acho que teria sido melhor me focar em uma coisa, mas hey, já passou e estou compensando o tempo perdido =)"
@@ -78,18 +78,18 @@ app.controller('logController', function ($scope) {
         },
 				{
             "title": "Curso React com Wes Bos",
-            "link": "",
+            "link": "https://reactforbeginners.com/",
             "category": "Curso",
             "year": 2016,
             "description": "Através deste curso entendi o básico de React para aplicar em um projeto do emprego na época."
         },
-				{
-						"title": "Certificação Front-End",
-						"link": "",
-						"category": "Curso",
-						"year": 2016,
-						"description": "O Free Code Camp pode não ser considerado um curso, mas simplesmente uma plataforma para se treinar desenvolvimento web, do básico ao avançado. Este certificado, adquirido em dezembro de 2016, demonstra que completei a parte Front-End do site (HTML, CSS, Bootstrap, Javascript, Ajax)."
-				},
+				// {
+				// 		"title": "Certificação Front-End",
+				// 		"link": "",
+				// 		"category": "Curso",
+				// 		"year": 2016,
+				// 		"description": "O Free Code Camp pode não ser considerado um curso, mas simplesmente uma plataforma para se treinar desenvolvimento web, do básico ao avançado. Este certificado, adquirido em dezembro de 2016, demonstra que completei a parte Front-End do site (HTML, CSS, Bootstrap, Javascript, Ajax)."
+				// },
         {
             "title": "Estágio Home Office",
             "link": "http://www.dmxweb.com.br/",
@@ -99,38 +99,38 @@ app.controller('logController', function ($scope) {
         },
 				{
             "title": "Estágio Faz-Tudo",
-            "link": "",
+            "link": "http://inpressmarketing.blogspot.com.br/",
             "category": "Experiência de Trabalho",
             "year": 2014,
             "description": "Oficialmente, era um estágio em web design, mas na realidade eu trabalhei a maior parte do tempo com desenvolvimento front-end. Fiz, ainda, várias outras coisas: atendi clientes, editei vídeos, modelei 3D, montei adesivo de aniversário brega e até plastifiquei documento."
         },
 				{
             "title": "Software de Gestão de Compras",
-            "link": "",
+            "link": "http://www.coobo.com.br/",
             "category": "Experiência de Trabalho",
             "year": 2015,
             "description": "Aqui eu trabalhei como única front-end do time, construindo um sistema com Boostrap e bastante Javascript. Foi uma experiência curtinha, mas reveladora, pois foi lá que comecei a usar metodologia ágil e controle de versão."
         },
 				{
             "title": "E-mail Marketing para Grandes Empresas",
-            "link": "",
+            "link": "http://www.repense.com.br/",
             "category": "Experiência de Trabalho",
             "year": 2015,
-            "description": "PSDs para HTML (e-mail), incluindo testes de envio. Tive que sair porque era muito <table><td><tr> para uma vida."
+            "description": "PSDs para HTML (e-mail), incluindo testes de envio. Tive que sair porque era muito <table><tr><td> para uma vida."
         },
 				{
             "title": "Desenvolvendo muuuuuito",
-            "link": "",
+            "link": "http://www.stormsec.com.br/",
             "category": "Experiência de Trabalho",
             "year": 2016,
             "description": "Nessa experiência eu usei bastante Javascript, incluindo um pouco de React com ES6. Trabalhei em equipe e sozinha, participei de reuniões com grandes clientes e fui discriminada por usar terminal branco (ainda uso, inclusive)."
         },
 				{
-            "title": "?",
-            "link": "",
+            "title": "Sistema para transportes",
+            "link": "http://www.m2msolutions.com.br/",
             "category": "Experiência de Trabalho",
             "year": 2017,
-            "description": "Ano novo, emprego novo. O que será?"
+            "description": "Quando cheguei, o CSS tinha escalado de um jeito não muito agradável. Estou arregaçando as mangas para tentar mudar essa realidade, implementando Sass e BEM."
         },
         {
             "title": "Eloquent Javascript",
@@ -141,7 +141,7 @@ app.controller('logController', function ($scope) {
         },
         {
             "title": "You Don't Know JS",
-            "link": "",
+            "link": "https://github.com/getify/You-Dont-Know-JS",
             "category": "Livro",
             "year": 2016,
             "description": "Li 4 de 6 dos livros dessa série maravilhosa, mas o fiz de forma superficial. Voltarei a lê-los com mais atenção e também para tomar notas."
@@ -151,7 +151,15 @@ app.controller('logController', function ($scope) {
             "link": "",
             "category": "Livro",
             "year": 2016,
-            "description": "Estou na página 115 deste livro e confesso que até o momento achei um pouco chato, mas pretendo insistir e terminá-lo."
+            "description": "Estou na página 247 deste livro e confesso que até o momento achei um pouco chato, mas pretendo insistir e terminá-lo."
+        },
+        {
+            "title": "HTML5 e CSS3 - Domine a web do futuro",
+            "link": "https://www.casadocodigo.com.br/products/livro-html-css",
+            "category": "Livro",
+            "year": 2017,
+            "month": ["Fevereiro", 02],
+            "description": "Achei esse livro bem basiquinho, algumas partes acabei lendo superficialmente. Mas curti como fonte de iniciantes na área que costumam me pedir umas dicas."
         }
 
     ]
