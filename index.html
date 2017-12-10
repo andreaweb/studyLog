@@ -9,18 +9,25 @@
 	<h1>Diário de Estudos</h1>
 	<h2></h2>
 
-	<form>
-				<!-- inserir um radio button ou checkbox com a opção "Mostrar descrição", deixando sem seleção by default e portanto escondendo a descrição-->
-				<span class="glyphicon glyphicon-search" ></span >
+	<form class="flex-form">
+		<!-- inserir um radio button ou checkbox com a opção "Mostrar descrição", deixando sem seleção by default e portanto escondendo a descrição-->
+		<span class="glyphicon glyphicon-search" ></span >
 
 
-					<input type="text"
-								 class="search"
-								 ng-model="search"
-								 placeholder="Busca - no momento funciona apenas para títulos"
-									/>
+		<input type="text"
+					 class="search"
+					 ng-model="search"
+					 placeholder="Busca"
+						/>
 
-				<span class="glyphicon glyphicon-sort-by-attributes" ></span >
+		<select ng-model="filter" class="select">
+           <option value="title">por nome</option>
+           <option value="category">por categoria</option>
+           <option value="description">por descrição</option>
+           <option value="year">por ano (em números)</option>
+       </select>
+
+		<span class="glyphicon glyphicon-sort-by-attributes" ></span >
 	</form >
 
 	<main>
@@ -30,7 +37,7 @@
 
 		<section ng-repeat="item in filtereditems = (items | filter:search | filter:getFilter() | orderBy:order)">
 			<div>
-				<img ng-src="{{item.category == 'Curso' && 'images/diploma.png' || item.category == 'Realização' && 'images/achievement.png' || item.category == 'Livro' && 'images/book.png' || item.category == 'Experiência de Trabalho' && 'images/briefcase.png'}}">
+				<img ng-src="{{item.category == 'Curso' && 'images/diploma.png' || item.category == 'Realização' && 'images/achievement.png' || item.category == 'Livro' && 'images/book.png' || item.category == 'Experiência de Trabalho' && 'images/briefcase.png'}}" alt="{{item.category}}" title="{{item.category}}">
 				<h4 ng-if="item.link">
 					<a href="{{item.link}}" target="_blank">{{item.title}}</a>
 				</h4>

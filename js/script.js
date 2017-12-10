@@ -1,5 +1,4 @@
 var app = angular.module('studyLog', []);
-app
 
 app.controller('logController', function ($scope) {
 
@@ -11,26 +10,31 @@ app.controller('logController', function ($scope) {
 	$scope.selecteditems = null;
 	$scope.filters = { };
 
-	// $scope.filtergamesByTitle = function(title){
-  //              $scope.search = title;
-  //   };
-	//
-	// $scope.filtergamesByCategory = function(category){
-  //              $scope.search = category;
-  //   };
-	//
-	// $scope.filtergamesByYear = function(year){
-  //              $scope.search = year;
-  //   };
+	$scope.filterByTitle = function(title){
+                $scope.search = title;
+     };
+	
+    $scope.filterByCategory = function(category){
+                $scope.search = category;
+    };
 
-	$scope.filter = 'title';
+    $scope.filterByDescription = function(description){
+                $scope.search = description;
+    };
+	
+	$scope.filterByYear = function(year){
+                $scope.search = year;
+    };
 
+    $scope.filter = 'title';
+    
     $scope.getFilter = function() {
         var filter = {};
         filter[$scope.filter] = $scope.search;
         return filter;
     };
 
+ 
 	$scope.category = ["Livro", "Curso", "Realização","Experiência de Trabalho" ];
 	$scope.year = [2016, 2015, 2014,2013, 2012, 2011, 2010];
 	$scope.items = [
@@ -62,14 +66,14 @@ app.controller('logController', function ($scope) {
             "year": 2012,
             "description": "Foram vários meses estudando para o ENEM para conseguir o ProUni! O curso foi bem bacana, porém reforçou minha falta de foco. A cada trimestre aprendíamos diferentes conceitos e softwares: ilustração digital e manual, edição de vídeo, animação, design de livro, webdesign, etc... Eu ficava encantada com tudo e estudava de tudo um pouquinho. Hoje acho que teria sido melhor me focar em uma coisa, mas hey, já passou e estou compensando o tempo perdido =)"
         },
-				{
-						"title": "Pix Studios - Videografismo",
-						"link": "",
-						"category": "Curso",
-						"year": 2012,
-						"description": "Aprendi muito sobre 3D e vídeo neste curso. Conhecimentos que hoje não uso, mas que curto e pretendo usar de forma ocasional."
-				},
-				{
+		{
+				"title": "Pix Studios - Videografismo",
+				"link": "",
+				"category": "Curso",
+				"year": 2012,
+				"description": "Aprendi muito sobre 3D e vídeo neste curso. Conhecimentos que hoje não uso, mas que curto e pretendo usar de forma ocasional."
+		},
+		{
             "title": "Curso Boostrap - Lynda",
             "link": "",
             "category": "Curso",

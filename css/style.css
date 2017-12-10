@@ -7,6 +7,14 @@ body{
 	width: calc(85vw + 7.5vw);
 	margin-bottom: 5vh;
 }
+.flex-form{
+	display: flex;
+	max-width: 93vw;
+}
+.select{
+	height: 23px;
+	margin-left: 20px;
+}
 main{
 	width: 60vw;
 	float: left;
