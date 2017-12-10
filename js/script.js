@@ -60,7 +60,7 @@ app.controller('logController', function ($scope) {
             "link": "http://graduacao.infnet.edu.br/graduacao-design-grafico/?gclid=Cj0KEQiAlsrFBRCAxcCB54XElLEBEiQA_ei0DKt1oSioZpP4XAOj7oEjxhSQ9KbWOzZPd5ziV8O93SwaAuyT8P8HAQ",
             "category": "Curso",
             "year": 2012,
-            "description": "Foram vários meses estudando para o ENEM para conseguir o ProUni! O curso foi bem bacana, porém me ajudou na falta de foco. A cada trimestre aprendíamos diferentes conceitos e softwares: ilustração digital e manual, edição de vídeo, animação, design de livro, webdesign, etc... Eu ficava encantada com tudo e estudava de tudo um pouquinho. Hoje acho que teria sido melhor me focar em uma coisa, mas hey, já passou e estou compensando o tempo perdido =)"
+            "description": "Foram vários meses estudando para o ENEM para conseguir o ProUni! O curso foi bem bacana, porém reforçou minha falta de foco. A cada trimestre aprendíamos diferentes conceitos e softwares: ilustração digital e manual, edição de vídeo, animação, design de livro, webdesign, etc... Eu ficava encantada com tudo e estudava de tudo um pouquinho. Hoje acho que teria sido melhor me focar em uma coisa, mas hey, já passou e estou compensando o tempo perdido =)"
         },
 				{
 						"title": "Pix Studios - Videografismo",
